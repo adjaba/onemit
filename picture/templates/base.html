@@ -1,0 +1,16 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<html className="one-world" >
+<!-- <form className="search-bar" action="/get-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input className="search-button" type="submit" value="search"> 
+</form> -->
+    <form id="searchform" method="get" action="find/{{ name }}" accept-charset="utf-8">
+      <input class="search-bar" id="searchbox" name="q" type="text" placeholder="Search" value="{{ name }}">
+      <button class="search-button" type="submit" value="search">
+        <i class="fa fa-search">Search</i>
+      </button>
+    </form>
+</html>

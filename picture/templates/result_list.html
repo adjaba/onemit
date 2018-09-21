@@ -1,0 +1,32 @@
+{% load static %}
+
+<!-- <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" /> -->
+<html className="one-world" >
+<h1> you are at result_list.html</h1>
+
+{% block content %}
+    <h2>Entries</h2>
+    <ul>
+			<li> {{ first }} </li>
+            <!-- <li> {{ first.boxNumber }}, {{ first.lineNumber }} </li> -->
+            <img src= "http://storage.googleapis.com/mitpicgrids/hack/{{ image_name }}" />
+       <!--      <img src= "http://storage.googleapis.com/mitlayers/{{ text_name }}" /> -->
+       		<img src ="http://storage.googleapis.com/mitlayers/{{ text_name }}" style ="width:50%; height:50%"/>
+    </ul>
+{% endblock %}
+<!-- <form className="search-bar" action="/get-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input className="search-button" type="submit" value="search"> 
+</form> -->
+<!--     <form id="searchform" method="get" action="" accept-charset="utf-8">
+      <input class="search-bar" id="searchbox" name="q" type="text" placeholder="Search" value="{{ Entry.name }}">
+      <button class="search-button" type="submit" value="search">
+        <i class="fa fa-search">Search</i>
+      </button>
+    </form> -->
+</html>
+
+        <!-- {% for entry in queryset %} -->
+            <!-- <li>{{ entry.boxNumber }}, {{ entry.lineNumber }}</li> -->
+                    <!-- {% endfor %} -->
