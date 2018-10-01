@@ -19,23 +19,27 @@ def index(request):
 import pandas as pd
 import numpy as np
 
-def search(names):
-    df = pd.read_csv('./picture/HACKmerged.csv', encoding = "ISO-8859-1")
-    df2 = pd.read_csv('./picture/pixmerged.csv', encoding = "ISO-8859-1")
-    dicty={}
-    dicty[0] = ()
-    counter = 0
-    for i in names:
-        i = i.upper()
-        samebox = df.loc[df['name'] == i, 'boxNumber'].tolist()
-        sameline = df.loc[df['name'] == i, 'lineNumber'].tolist()
-        dicty[counter] = set(list(zip(samebox, sameline)))
-        counter+=1
+# def search(names):
+#     # name, box number, line number
+#     df = pd.read_csv('./picture/HACKmerged.csv', encoding = "ISO-8859-1")
+#     # x1, y1, x2, y2, box number
+#     df2 = pd.read_csv('./picture/pixmerged.csv', encoding = "ISO-8859-1")
+    
+#     dicty={}
+#     dicty[0] = ()
+#     counter = 0
+#     for i in names:
+#         # converting i to upper case
+#         i = i.upper()
+#         samebox = df.loc[df['name'] == i, 'boxNumber'].tolist()
+#         sameline = df.loc[df['name'] == i, 'lineNumber'].tolist()
+#         dicty[counter] = set(list(zip(samebox, sameline)))
+#         counter+=1
 
-    ans = dicty[0].intersection(*dicty.values())
+#     ans = dicty[0].intersection(*dicty.values())
 
         
-    return (list(ans)[0])
+#     return (list(ans)[0])
 
 class ResultListView(ListView):
     """
