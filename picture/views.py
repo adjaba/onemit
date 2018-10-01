@@ -19,27 +19,29 @@ def index(request):
 import pandas as pd
 import numpy as np
 
-# def search(names):
-#     # name, box number, line number
-#     df = pd.read_csv('./picture/HACKmerged.csv', encoding = "ISO-8859-1")
-#     # x1, y1, x2, y2, box number
-#     df2 = pd.read_csv('./picture/pixmerged.csv', encoding = "ISO-8859-1")
-    
-#     dicty={}
-#     dicty[0] = ()
-#     counter = 0
-#     for i in names:
-#         # converting i to upper case
-#         i = i.upper()
-#         samebox = df.loc[df['name'] == i, 'boxNumber'].tolist()
-#         sameline = df.loc[df['name'] == i, 'lineNumber'].tolist()
-#         dicty[counter] = set(list(zip(samebox, sameline)))
-#         counter+=1
+# name, box number, line number
+df = pd.read_csv('./picture/HACKmerged.csv', encoding = "ISO-8859-1")
+# x1, y1, x2, y2, box number
+df2 = pd.read_csv('./picture/pixmerged.csv', encoding = "ISO-8859-1")
+# id, screenshot name
+df3 = pd.read_csv('./picture/nameconversion.csv', encoding = "ISO-8859-1")
 
-#     ans = dicty[0].intersection(*dicty.values())
+def search(names):
+    dicty={}
+    dicty[0] = ()
+    counter = 0
+    for i in names:
+        # converting i to upper case
+        i = i.upper()
+        samebox = df.loc[df['name'] == i, 'boxNumber'].tolist()
+        sameline = df.loc[df['name'] == i, 'lineNumber'].tolist()
+        dicty[counter] = set(list(zip(samebox, sameline)))
+        counter+=1
+
+    ans = dicty[0].intersection(*dicty.values())
 
         
-#     return (list(ans)[0])
+    return (list(ans)[0])
 
 class ResultListView(ListView):
     """
@@ -74,6 +76,6 @@ class ResultListView(ListView):
                 i += 1
         context['first']= context['queryset']
         context['image_name']= mapping[int(context['queryset'][0])]
-        context['text_name']= listy[int(context['queryset'][0])]
+        context['text_name']= df3.loc[df['id'] == int(context['queryset'][0]), 'screenshot'].tolist()[0]
         return context
 

@@ -10,12 +10,17 @@ def search(names):
     df = pd.read_csv('./HACKmerged.csv', encoding = "ISO-8859-1")
     # x1, y1, x2, y2, box number
     df2 = pd.read_csv('./pixmerged.csv', encoding = "ISO-8859-1")
+    # id, screenshot name
     df3 = pd.read_csv('./nameconversion.csv', encoding = "ISO-8859-1")
 
+    # dictionary mapping name index to set of box, line tuples
     dicty={}
     dicty[0] = ()
+
+    # name index
     counter = 0
 
+    # convert names to uppercase
     names = [element.upper() for element in names]  
     for i in names:
         samebox = df.loc[df['name'] == i, 'boxNumber'].tolist()
@@ -89,7 +94,7 @@ def search(names):
     
 
         
-search(["Haripriya", "Mehta"])    
+search(["Yun", "Song"])    
                                 
         
     
