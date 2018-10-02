@@ -1,26 +1,4 @@
-{% load static %}
-<!-- <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" /> -->
-<html className="one-world">
-<link rel="stylesheet" href="/static/css/main.css" media="all" />
-<style>
-.theme--custom {
-    --primary-spot: 58, 109, 255;
-    --primary-text: 0, 0, 0;
-    --primary-bg: 255, 255, 255;
-    --primary-bg--alt: 255, 255, 255;
-    --secondary-spot: 95, 152, 255;
-    --secondary-text: 255, 255, 255;
-    --secondary-bg: 0, 0, 0;
-    --search-spot: 95, 152, 255;
-    --search-text: 255, 255, 255;
-    --search-bg: 0, 0, 0;
-}
-</style>
-
-<html lang="en" class="no-js theme--custom">
-<body class="front homepage spotlight">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <nav class="site-nav">
+<nav class="site-nav front homepage spotlight">
         <div class="site-nav__width">
             <a class="site-nav__logo-link" href="/">
                 <svg width="85" viewBox="0 0 73 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mit-logo site-nav__logo">
@@ -69,21 +47,3 @@
                 </svg>
             </div>
     </nav>
-    
-    <main class="primary-container">
-    </main>
-    </div>
-    </nav>
-</body>
-{% block content %}
-<h2>Entries</h2>
-<ul>
-    <li> {{ first }} </li>
-    <!-- <li> {{ first.boxNumber }}, {{ first.lineNumber }} </li> -->
-    <img src= "http://storage.googleapis.com/mitpicgrids/hack/{{ image_name }}" />
-    <!--      <img src= "http://storage.googleapis.com/mitlayers/{{ text_name }}" /> -->
-    <img src ="http://storage.googleapis.com/mitlayers/{{ text_name }}" style ="width:50%; height:50%"/>
-    </ul>
-    {% endblock %}
-
-</html>

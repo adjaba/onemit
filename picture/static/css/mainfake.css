@@ -1,5 +1,572 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-Light.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-Light.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-Light.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-Light.woff) format("woff");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-LightItalic.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-LightItalic.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-LightItalic.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-LightItalic.woff) format("woff");
+    font-weight: 200;
+    font-style: italic
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-Book.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-Book.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-Book.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-Book.woff) format("woff");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-BookItalic.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-BookItalic.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-BookItalic.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-BookItalic.woff) format("woff");
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-Regular.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-Regular.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-Regular.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-RegularItalic.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-RegularItalic.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-RegularItalic.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-RegularItalic.woff) format("woff");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBold.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBold.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBold.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBold.woff) format("woff");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBoldItalic.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBoldItalic.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBoldItalic.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-SemiBoldItalic.woff) format("woff");
+    font-weight: 600;
+    font-style: italic
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-Bold.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-Bold.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-Bold.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-Bold.woff) format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-BoldItalic.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-BoldItalic.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-BoldItalic.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-BoldItalic.woff) format("woff");
+    font-weight: 700;
+    font-style: italic
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-Black.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-Black.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-Black.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-Black.woff) format("woff");
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: MessinaSans;
+    src: url(/themes/mit/assets/fonts/MessinaSansWeb-BlackItalic.eot?) format("embedded-opentype"), url(/themes/mit/assets/fonts/MessinaSansWeb-BlackItalic.woff2) format("woff2"), url(/themes/mit/assets/fonts/MessinaSansWeb-BlackItalic.svg) format("svg"), url(/themes/mit/assets/fonts/MessinaSansWeb-BlackItalic.woff) format("woff");
+    font-weight: 900;
+    font-style: italic
+}
+
+.theme--default,
+:root {
+    --primary-spot: 58, 109, 255;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 255, 255;
+    --secondary-spot: 95, 152, 255;
+    --search-spot: 95, 152, 255
+}
+
+.theme--default,
+.theme--emerald,
+:root {
+    --secondary-text: 255, 255, 255;
+    --secondary-bg: 0, 0, 0;
+    --search-text: 255, 255, 255;
+    --search-bg: 0, 0, 0
+}
+
+.theme--emerald {
+    --primary-spot: 0, 196, 92;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 253, 253, 253;
+    --secondary-spot: 0, 196, 92;
+    --search-spot: 0, 196, 92
+}
+
+.theme--orange-bg {
+    --primary-spot: 254, 102, 96;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 246, 246;
+    --secondary-spot: 34, 34, 34;
+    --secondary-text: 0, 0, 0;
+    --secondary-bg: 255, 126, 93;
+    --search-spot: 254, 102, 96;
+    --search-text: 255, 255, 255;
+    --search-bg: 0, 0, 0
+}
+
+.theme--taco {
+    --primary-spot: 133, 0, 32;
+    --primary-text: 69, 12, 37;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 249, 215, 192;
+    --secondary-spot: 11, 245, 163;
+    --secondary-text: 245, 216, 194;
+    --secondary-bg: 133, 0, 32;
+    --search-spot: 11, 245, 163;
+    --search-text: 245, 216, 194;
+    --search-bg: 133, 0, 32
+}
+
+.theme--melon-sunset {
+    --primary-spot: 193, 136, 6;
+    --primary-text: 69, 12, 37;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 237, 240;
+    --secondary-spot: 255, 125, 77;
+    --secondary-text: 255, 254, 247;
+    --secondary-bg: 44, 8, 8;
+    --search-spot: 255, 125, 77;
+    --search-text: 255, 254, 247;
+    --search-bg: 44, 8, 8
+}
+
+.theme--watermelon {
+    --primary-spot: 0, 127, 95;
+    --primary-text: 1, 1, 1;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 238, 167, 178;
+    --secondary-spot: 242, 228, 48;
+    --secondary-text: 250, 255, 255;
+    --secondary-bg: 0, 127, 96;
+    --search-spot: 242, 228, 48;
+    --search-text: 250, 255, 255;
+    --search-bg: 0, 127, 96
+}
+
+.theme--lemon {
+    --primary-spot: 0, 87, 253;
+    --primary-text: 63, 66, 97;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 251, 247;
+    --secondary-spot: 0, 87, 253;
+    --secondary-text: 38, 38, 38;
+    --secondary-bg: 251, 235, 157;
+    --search-spot: 0, 87, 253;
+    --search-text: 255, 255, 255;
+    --search-bg: 38, 38, 38
+}
+
+.theme--florida {
+    --primary-spot: 132, 0, 85;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 173, 132;
+    --secondary-spot: 219, 237, 234;
+    --secondary-bg: 98, 117, 255;
+    --search-spot: 132, 0, 85
+}
+
+.theme--florida,
+.theme--slime {
+    --secondary-text: 0, 0, 0;
+    --search-text: 255, 255, 255;
+    --search-bg: 0, 0, 0
+}
+
+.theme--slime {
+    --primary-spot: 27, 210, 0;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 255, 255;
+    --secondary-spot: 10, 113, 8;
+    --secondary-bg: 57, 255, 106;
+    --search-spot: 27, 210, 0
+}
+
+.theme--lux {
+    --primary-spot: 192, 146, 62;
+    --primary-text: 2, 52, 51;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 242, 236, 222;
+    --secondary-spot: 94, 203, 166;
+    --secondary-text: 239, 239, 239;
+    --secondary-bg: 3, 71, 70;
+    --search-spot: 94, 203, 166;
+    --search-text: 239, 239, 239;
+    --search-bg: 3, 71, 70
+}
+
+.theme--moldy-peach {
+    --primary-spot: 128, 98, 129;
+    --primary-text: 19, 62, 55;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 239, 231;
+    --secondary-spot: 255, 239, 230;
+    --secondary-text: 240, 151, 127;
+    --secondary-bg: 18, 60, 51;
+    --search-spot: 255, 239, 230;
+    --search-text: 240, 151, 127;
+    --search-bg: 18, 60, 51
+}
+
+.theme--touch-o-spice {
+    --primary-spot: 207, 4, 18;
+    --primary-text: 31, 27, 54;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 202, 225, 217;
+    --secondary-spot: 237, 133, 47;
+    --secondary-text: 255, 255, 255;
+    --secondary-bg: 33, 29, 56;
+    --search-spot: 237, 133, 47;
+    --search-text: 255, 255, 255;
+    --search-bg: 33, 29, 56
+}
+
+.theme--denim {
+    --primary-spot: 247, 80, 66;
+    --primary-text: 46, 50, 91;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 210, 214;
+    --secondary-spot: 248, 80, 66;
+    --secondary-text: 245, 241, 229;
+    --secondary-bg: 47, 50, 90;
+    --search-spot: 248, 80, 66;
+    --search-text: 245, 241, 229;
+    --search-bg: 47, 50, 90
+}
+
+.theme--bubblegum {
+    --primary-spot: 255, 144, 241;
+    --primary-text: 27, 46, 154;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 241, 247, 255;
+    --secondary-spot: 0, 50, 189;
+    --secondary-text: 27, 46, 154;
+    --secondary-bg: 255, 181, 246;
+    --search-spot: 255, 144, 241;
+    --search-text: 255, 255, 255;
+    --search-bg: 27, 46, 154
+}
+
+.theme--putty {
+    --primary-spot: 201, 162, 141;
+    --primary-text: 19, 6, 5;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 250, 250, 250;
+    --secondary-spot: 94, 42, 38;
+    --secondary-text: 0, 0, 0;
+    --secondary-bg: 219, 207, 198;
+    --search-spot: 201, 162, 141;
+    --search-text: 255, 255, 255;
+    --search-bg: 0, 0, 0
+}
+
+.theme--cyan {
+    --primary-spot: 29, 205, 198;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 248, 255, 255;
+    --secondary-spot: 53, 55, 64;
+    --secondary-text: 12, 20, 59;
+    --secondary-bg: 108, 235, 229;
+    --search-spot: 29, 205, 198;
+    --search-text: 255, 255, 255;
+    --search-bg: 12, 20, 59
+}
+
+.theme--pencil {
+    --primary-spot: 255, 187, 0;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 250, 250, 250;
+    --secondary-spot: 53, 64, 57;
+    --secondary-text: 0, 0, 0;
+    --secondary-bg: 255, 202, 55;
+    --search-spot: 255, 187, 0;
+    --search-text: 255, 255, 255;
+    --search-bg: 0, 0, 0
+}
+
+.theme--eraser {
+    --primary-spot: 255, 137, 89;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 246, 245;
+    --secondary-spot: 154, 43, 151;
+    --secondary-text: 57, 4, 31;
+    --secondary-bg: 255, 191, 181;
+    --search-spot: 255, 137, 89;
+    --search-text: 255, 255, 255;
+    --search-bg: 57, 4, 31
+}
+
+.theme--ocean {
+    --primary-spot: 58, 109, 255;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 245, 247, 252;
+    --secondary-spot: 0, 50, 189;
+    --secondary-bg: 199, 229, 255;
+    --search-spot: 58, 109, 255
+}
+
+.theme--air,
+.theme--ocean {
+    --secondary-text: 0, 0, 0;
+    --search-text: 255, 255, 255;
+    --search-bg: 0, 0, 0
+}
+
+.theme--air {
+    --primary-spot: 228, 0, 163;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 250, 250, 250;
+    --secondary-spot: 228, 0, 163;
+    --secondary-bg: 229, 240, 244;
+    --search-spot: 228, 0, 163
+}
+
+.theme--leaf {
+    --primary-spot: 22, 193, 100;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 244, 251, 247;
+    --secondary-spot: 118, 255, 181;
+    --secondary-bg: 68, 82, 74;
+    --search-spot: 118, 255, 181;
+    --search-bg: 68, 82, 74
+}
+
+.theme--leaf,
+.theme--magenta {
+    --secondary-text: 255, 255, 255;
+    --search-text: 255, 255, 255
+}
+
+.theme--magenta {
+    --primary-spot: 245, 69, 197;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 252, 248, 251;
+    --secondary-spot: 241, 238, 91;
+    --secondary-bg: 143, 0, 105;
+    --search-spot: 241, 238, 91;
+    --search-bg: 143, 0, 105
+}
+
+.theme--purple {
+    --primary-spot: 106, 70, 230;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 248, 249, 254;
+    --secondary-spot: 255, 255, 255;
+    --secondary-text: 219, 236, 234;
+    --secondary-bg: 88, 64, 172;
+    --search-spot: 255, 255, 255;
+    --search-text: 219, 236, 234;
+    --search-bg: 88, 64, 172
+}
+
+.theme--eggplant {
+    --primary-spot: 0, 223, 173;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 247, 246, 246;
+    --secondary-spot: 56, 244, 193;
+    --secondary-bg: 57, 4, 31;
+    --search-spot: 56, 244, 193;
+    --search-bg: 57, 4, 31
+}
+
+.theme--eggplant,
+.theme--slate {
+    --secondary-text: 255, 255, 255;
+    --search-text: 255, 255, 255
+}
+
+.theme--slate {
+    --primary-spot: 186, 133, 106;
+    --primary-text: 65, 69, 103;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 249, 249, 255;
+    --secondary-spot: 218, 185, 168;
+    --secondary-bg: 65, 69, 103;
+    --search-spot: 218, 185, 168;
+    --search-bg: 65, 69, 103
+}
+
+.theme--blue {
+    --primary-spot: 0, 223, 173;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 249, 249, 255;
+    --secondary-spot: 118, 255, 181;
+    --secondary-text: 246, 254, 248;
+    --secondary-bg: 36, 38, 174;
+    --search-spot: 118, 255, 181;
+    --search-text: 246, 254, 248;
+    --search-bg: 36, 38, 174
+}
+
+.theme--berry {
+    --primary-spot: 229, 99, 136;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 243, 241, 250;
+    --secondary-spot: 229, 99, 136;
+    --secondary-text: 255, 255, 255;
+    --secondary-bg: 41, 6, 90;
+    --search-spot: 229, 99, 136;
+    --search-text: 255, 255, 255;
+    --search-bg: 41, 6, 90
+}
+
+.theme--nimbus-3000 {
+    --primary-spot: 95, 175, 207;
+    --primary-text: 4, 24, 17;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 237, 245, 249;
+    --secondary-spot: 95, 175, 207;
+    --secondary-bg: 4, 24, 17;
+    --search-spot: 95, 175, 207;
+    --search-bg: 4, 24, 17
+}
+
+.theme--cinder,
+.theme--nimbus-3000 {
+    --secondary-text: 246, 254, 248;
+    --search-text: 246, 254, 248
+}
+
+.theme--cinder {
+    --primary-spot: 233, 55, 63;
+    --primary-text: 19, 8, 29;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 246, 246, 246;
+    --secondary-spot: 233, 55, 63;
+    --secondary-bg: 19, 8, 29;
+    --search-spot: 233, 55, 63;
+    --search-bg: 19, 8, 29
+}
+
+.theme--orange {
+    --primary-spot: 255, 137, 89;
+    --primary-text: 4, 24, 17;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 246, 246, 246;
+    --secondary-spot: 255, 137, 89;
+    --secondary-bg: 4, 24, 17;
+    --search-spot: 255, 137, 89;
+    --search-bg: 4, 24, 17
+}
+
+.theme--orange,
+.theme--periwinkle {
+    --secondary-text: 246, 254, 248;
+    --search-text: 246, 254, 248
+}
+
+.theme--periwinkle {
+    --primary-spot: 122, 140, 255;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 245, 245, 248;
+    --secondary-spot: 122, 140, 255;
+    --secondary-bg: 0, 0, 0;
+    --search-spot: 122, 140, 255;
+    --search-bg: 0, 0, 0
+}
+
+.theme--brass {
+    --primary-spot: 201, 162, 105;
+    --primary-text: 4, 24, 17;
+    --primary-bg--alt: 245, 245, 244;
+    --secondary-spot: 201, 162, 105;
+    --secondary-bg: 4, 24, 17;
+    --search-spot: 201, 162, 105;
+    --search-bg: 4, 24, 17
+}
+
+.theme--blackboard,
+.theme--brass {
+    --primary-bg: 255, 255, 255;
+    --secondary-text: 246, 254, 248;
+    --search-text: 246, 254, 248
+}
+
+.theme--blackboard {
+    --primary-spot: 182, 112, 61;
+    --primary-text: 24, 19, 23;
+    --primary-bg--alt: 245, 245, 244;
+    --secondary-spot: 182, 112, 61;
+    --secondary-bg: 24, 19, 23;
+    --search-spot: 182, 112, 61;
+    --search-bg: 24, 19, 23
+}
+
+.theme--sky-blue {
+    --primary-spot: 201, 162, 105;
+    --primary-text: 12, 20, 59;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 255, 255;
+    --secondary-spot: 58, 108, 255;
+    --secondary-text: 12, 20, 59;
+    --secondary-bg: 237, 245, 249;
+    --search-bg: 12, 20, 59
+}
+
+.theme--search,
+.theme--sky-blue {
+    --search-spot: 201, 162, 105;
+    --search-text: 255, 255, 255
+}
+
+.theme--search {
+    --primary-spot: 201, 162, 105;
+    --primary-text: 0, 0, 0;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 245, 245, 244;
+    --secondary-spot: 201, 162, 105;
+    --secondary-text: 255, 255, 255;
+    --secondary-bg: 0, 0, 0;
+    --search-bg: 0, 0, 0
+}
+
+.theme--emergency {
+    --primary-spot: 255, 0, 0;
+    --primary-text: 18, 35, 60;
+    --primary-bg: 255, 255, 255;
+    --primary-bg--alt: 255, 255, 255;
+    --secondary-spot: 255, 237, 0;
+    --secondary-text: 255, 255, 255;
+    --secondary-bg: 18, 35, 60;
+    --search-spot: 255, 237, 0;
+    --search-text: 255, 255, 255;
+    --search-bg: 18, 35, 60
+}
+
 *,
 :after,
 :before {
@@ -208,7 +775,7 @@ textarea:focus {
     }
 }
 
-/*input[type=email]:focus,
+input[type=email]:focus,
 input[type=text]:focus,
 textarea:focus {
     outline: 0;
@@ -222,7 +789,7 @@ textarea:focus {
 input[type=email],
 input[type=text] {
     height: 60px
-}*/
+}
 
 textarea {
     padding: 15px
@@ -234,7 +801,7 @@ textarea {
     }
 }
 
-/*input[type=radio] {
+input[type=radio] {
     opacity: 0;
     pointer-events: none;
     position: absolute
@@ -402,7 +969,7 @@ input[type=submit]:focus {
     -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, .1);
     box-shadow: 0 10px 35px rgba(0, 0, 0, .1)
 }
-*/
+
 select {
     font-size: inherit;
     font-weight: inherit;
@@ -2028,7 +2595,7 @@ strong {
 
 @media (min-width:1100px) and (max-width:1374px) {
     .spotlight-archive-nav-mod {
-        width: 0px
+        width: 550px
     }
 }
 
@@ -4483,7 +5050,7 @@ h4+p {
 
 @media (min-width:1100px) and (min-width:1100px) and (max-width:1374px) {
     .homepage .es-search-mod {
-        width: 100%
+        width: 550px
     }
 }
 
@@ -4634,7 +5201,6 @@ h4+p {
 }
 
 .homepage .es-search__label {
-    /*background-color: white;*/
     font-size: 16.0002px;
     font-weight: 400;
     line-height: 1.1;
@@ -8800,7 +9366,7 @@ a:hover .site-footer__join-us-icon {
     .spotlight-mod {
         min-width: 50%;
         width: -webkit-calc(100% - 550px);
-        width: calc(100% - 550px)
+        width: calc(100% - 550px);
     }
 }
 
@@ -8874,7 +9440,7 @@ a:hover .site-footer__join-us-icon {
 
 @media (min-width:1100px) and (max-width:1374px) {
     .spotlight-mod--home {
-        margin-left: 550px
+        margin-left: 550px;
     }
 
     .search-mode-enabled .spotlight-mod--home {
@@ -10857,36 +11423,3 @@ nav#toolbar-bar>div {
     -webkit-animation: e .5s cubic-bezier(.215, .61, .355, 1) forwards;
     animation: e .5s cubic-bezier(.215, .61, .355, 1) forwards
 }
-
-nav {
-    overflow: auto;
-}
-
-#backgroundimage {
-    background-image: url("v4_medium_full.png");
-    height: 100vh;
-    background-position: center;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    position: relative;
-} 
-
-.es-search__width{
-    position: fixed;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
-.white-box {
-    background-color: white;
-    color: black;
-}
-/*
-body {
-    background: url("maroonmit.png") no-repeat;
-    background-size: 100% cover;
-    background-position: center;
-    /*margin-top: 100px;
-    margin-bottom: 10px;
-    z-index: -1;
-}*/
