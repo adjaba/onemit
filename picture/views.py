@@ -1,3 +1,4 @@
+from .dataread import search
 from django.shortcuts import render
 
 # Create your views here.
@@ -10,6 +11,7 @@ import operator
 from django.db.models import Q
 from .models import Entry
 from functools import reduce
+
 
 
 def index(request):
@@ -26,7 +28,7 @@ df2 = pd.read_csv('./picture/pixmerged.csv', encoding = "ISO-8859-1")
 # id, screenshot name
 df3 = pd.read_csv('./picture/nameconversion.csv', encoding = "ISO-8859-1")
 
-def search(names):
+def searchHighlightedBoxName(names):
     dicty={}
     dicty[0] = ()
     counter = 0
@@ -39,9 +41,11 @@ def search(names):
         counter+=1
 
     ans = dicty[0].intersection(*dicty.values())
+    return (list(ans))
 
-        
-    return (list(ans)[0])
+def results(request):
+    context['image_name']
+    return render (request, 'result_list.html')
 
 class ResultListView(ListView):
     """
@@ -61,12 +65,13 @@ class ResultListView(ListView):
         # box_line_list=[]
         if query:
             query_list = query.split()
-            return search(query_list)
+            return searchHighlightedBoxName(query_list)[0]
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
+        # context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
+        context = {}
         context['queryset'] = self.get_queryset()
         mapping = {}
         i = 0

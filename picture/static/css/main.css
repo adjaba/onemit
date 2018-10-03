@@ -27,7 +27,7 @@ summary {
     display: block
 }
 
-audio,
+/*audio,
 canvas,
 video {
     display: inline-block;
@@ -38,7 +38,7 @@ video {
 audio:not([controls]) {
     display: none;
     height: 0
-}
+}*/
 
 figure img {
     display: block
@@ -606,7 +606,7 @@ strong {
     width: 1px
 }
 
-.tle-row {
+/*.tle-row {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
@@ -1284,7 +1284,7 @@ strong {
     padding-left: 10px;
     padding-right: 10px;
     width: 100%
-}
+}*/
 
 @media (min-width:1100px) {
     .tle-column-12 {

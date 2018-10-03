@@ -1,23 +1,41 @@
 {% load static %}
 <!-- <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}" /> -->
-<html className="one-world">
-<link rel="stylesheet" href="/static/css/main.css" media="all" />
-<style>
-.theme--custom {
-    --primary-spot: 58, 109, 255;
-    --primary-text: 0, 0, 0;
-    --primary-bg: 255, 255, 255;
-    --primary-bg--alt: 255, 255, 255;
-    --secondary-spot: 95, 152, 255;
-    --secondary-text: 255, 255, 255;
-    --secondary-bg: 0, 0, 0;
-    --search-spot: 95, 152, 255;
-    --search-text: 255, 255, 255;
-    --search-bg: 0, 0, 0;
-}
-</style>
 
-<html lang="en" class="no-js theme--custom">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta property="description" content="The mission of MIT is to advance knowledge and educate students in science, technology and other areas of scholarship that will best serve the nation and the world in the 21st century." />
+    <meta property="og:site_name" content="Massachusetts Institute of Technology" />
+    <meta property="og:site" content="http://onemit.mit.edu" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The Massachusetts Institute of Technology (MIT)" />
+    <meta property="og:url" content="http://onemit.mit.edu" />
+    <meta property="og:description" content="The mission of MIT is to advance knowledge and educate students in science, technology and other areas of scholarship that will best serve the nation and the world in the 21st century." />
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/static/css/main.css" media="all" />
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+	<link rel="stylesheet" href="/themes/mit/assets/css/ie-7-8.css?peuqxh" media="all" />
+	<![endif]-->
+    <style>
+    .theme--custom {
+        --primary-spot: 58, 109, 255;
+        --primary-text: 0, 0, 0;
+        --primary-bg: 255, 255, 255;
+        --primary-bg--alt: 255, 255, 255;
+        --secondary-spot: 95, 152, 255;
+        --secondary-text: 255, 255, 255;
+        --secondary-bg: 0, 0, 0;
+        --search-spot: 95, 152, 255;
+        --search-text: 255, 255, 255;
+        --search-bg: 0, 0, 0;
+    }
+    </style>
+</head>
+
 <body class="front homepage spotlight">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <nav class="site-nav">
@@ -46,7 +64,7 @@
                 <li class="site-nav__link-item">
                     <a href="/faq" class="site-nav__link js-nav-item" data-drupal-link-system-path="node/14">FAQ</a>
                 </li>
-                <li class="site-nav__link-item site-nav__link-item--more">
+   <!--              <li class="site-nav__link-item site-nav__link-item--more">
                     <span class="site-nav__link">More <span class="site-nav__arrow">↓</span></span>
                     <ul class="site-nav__more-list js-nav-more">
                         <li class="site-nav__more-link-item">
@@ -56,27 +74,36 @@
                             <a href="/faq" class="site-nav__link js-nav-item" data-drupal-link-system-path="node/14">FAQ</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
             <div class="site-nav__buttons">
-                <!--             <svg class="icon--search-mag site-nav__search-mag" width="26"
-  viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="currentColor" stroke-width="1.5" class="icon--search-mag">
-    <g stroke="currentColor" stroke-width="1.5" fill="none">
-      <circle cx="9.20757329" cy="8.99160695" r="8.50646589"></circle> -->
-      <button class="site-nav__mobile-trigger js-mobile-nav-trigger"><span class="js-mobile-nav-trigger-text">Menu</span> <span class="site-nav__arrow js-mobile-nav-trigger-arrow">↓</span></button>
-                <!-- <path d="M14.8522097,14.6362434 L20.7140392,20.4980728" id="Line-4"></path> -->
+                <button class="site-nav__mobile-trigger js-mobile-nav-trigger"><span class="js-mobile-nav-trigger-text">Menu</span> <span class="site-nav__arrow js-mobile-nav-trigger-arrow">↓</span></button>
                 </g>
                 </svg>
             </div>
     </nav>
-    
-    <main class="primary-container">
-    </main>
     </div>
     </nav>
+    <h2> SearchResults </h2>
+    <div class="spotlight-recirc__hgroup">
+        <h3 class="spotlight-recirc__title" aria-hidden="true">Placeholder</h3>
+    </div>
+    <div class="spotlight-recirc__hgroup">
+        <h3 class="spotlight-recirc__title" aria-hidden="true">Placeholder</h3>
+    </div>
 </body>
+<footer class="site-footer">
+    <div class="site-footer__utility-mod">
+        <p class="site-footer__name">
+            Massachusetts Institute of Technology
+        </p>
+        <div class="site-footer__contact-info">
+            <a href="https://www.google.com/maps/place/Massachusetts+Institute+of+Technology/@42.360091,-71.09416,15z/data=!4m5!3m4!1s0x0:0xd0e08ea5b308203c!8m2!3d42.360091!4d-71.09416" target="_blank" class="site-footer__contact-info-link">77 Massachusetts Avenue, Cambridge, MA, USA</a>
+        </div>
+    </div>
+</footer>
 {% block content %}
-<h2>Entries</h2>
+<h2>Search Results</h2>
 <ul>
     <li> {{ first }} </li>
     <!-- <li> {{ first.boxNumber }}, {{ first.lineNumber }} </li> -->
@@ -86,4 +113,4 @@
     </ul>
     {% endblock %}
 
-</html>
+    </html>

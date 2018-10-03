@@ -82,10 +82,10 @@
         <!-- Autosuggest UI handled by Vue.js components -->
         <div class="es-search-mod" id="search-app" @keydown.up.exact.prevent="onUp" @keydown.down.exact.prevent="onDown" @keydown.tab.exact="onTab" @keydown.shift.tab.exact="onShiftTab" :class="{'search-has-quick-links': searchMode}">
             <div class="es-search__overflow">
-                <div class="es-search__width js-search-terms white-box">
+                <div class="es-search__width js-search-terms">
                     <!-- <form id="searchform" method="get" action="find/{{ name }}" accept-charset="utf-8"> -->
                     <form method="GET" action="find/{{ name }}" id="es-search-form" class="es-search-form js-es-search-form">
-                        <label for="es-search-form-input" class="es-search__label js-search-trigger">Find your name in the dome!</label>
+                        <label for="es-search-form-input" class="es-search__label js-search-trigger white-box">Find your name in the dome!</label>
                         <div class="es-search__box-mod">
                             <svg width="30" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="currentColor" stroke-width="1.5" class="icon--search-mag search-box__mag">
                                 <g stroke="currentColor" stroke-width="1.5" fill="none">
