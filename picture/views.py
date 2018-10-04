@@ -91,6 +91,5 @@ class ResultListView(ListView):
         context['first']= context['queryset']
         context['image_name']= mapping[int(context['queryset'][0])]
         context['text_name']= df3.loc[df['id'] == int(context['queryset'][0])+1, 'screenshot'].tolist()[0]
-        print(context['text_name'])
         return context
 
