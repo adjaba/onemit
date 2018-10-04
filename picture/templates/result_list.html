@@ -35,8 +35,8 @@
     }
     </style>
 </head>
-
-<body class="front homepage spotlight">
+<body>
+<!-- <body class="front homepage spotlight"> -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <nav class="site-nav">
         <div class="site-nav__width">
@@ -84,15 +84,24 @@
     </nav>
     </div>
     </nav>
-    <h2> SearchResults </h2>
-    <div class="spotlight-recirc__hgroup">
+<!--     <h2> SearchResults </h2> -->
+<!--     <div class="spotlight-recirc__hgroup">
         <h3 class="spotlight-recirc__title" aria-hidden="true">Placeholder</h3>
     </div>
     <div class="spotlight-recirc__hgroup">
         <h3 class="spotlight-recirc__title" aria-hidden="true">Placeholder</h3>
-    </div>
+    </div> -->
+<!-- </body> -->
+
+<!-- <ul> -->
+    <!-- <li> {{ first }} </li> -->
+    <!-- <li> {{ first.boxNumber }}, {{ first.lineNumber }} </li> -->
+    <img class= "result-image" src= "http://storage.googleapis.com/mitpicgrids/hack/{{ image_name }}" />
+         <!-- <img src= "http://storage.googleapis.com/mitlayers/{{ text_name }}" /> -->
+    <img class= "result-image" src ="http://storage.googleapis.com/mitlayers/{{ text_name }}" style ="width:50%; height:50%"/>
+<!-- </ul> -->
 </body>
-<footer class="site-footer">
+<!-- <footer class="site-footer">
     <div class="site-footer__utility-mod">
         <p class="site-footer__name">
             Massachusetts Institute of Technology
@@ -101,16 +110,10 @@
             <a href="https://www.google.com/maps/place/Massachusetts+Institute+of+Technology/@42.360091,-71.09416,15z/data=!4m5!3m4!1s0x0:0xd0e08ea5b308203c!8m2!3d42.360091!4d-71.09416" target="_blank" class="site-footer__contact-info-link">77 Massachusetts Avenue, Cambridge, MA, USA</a>
         </div>
     </div>
-</footer>
-{% block content %}
-<h2>Search Results</h2>
-<ul>
-    <li> {{ first }} </li>
-    <!-- <li> {{ first.boxNumber }}, {{ first.lineNumber }} </li> -->
-    <img src= "http://storage.googleapis.com/mitpicgrids/hack/{{ image_name }}" />
-    <!--      <img src= "http://storage.googleapis.com/mitlayers/{{ text_name }}" /> -->
-    <img src ="http://storage.googleapis.com/mitlayers/{{ text_name }}" style ="width:50%; height:50%"/>
-    </ul>
-    {% endblock %}
+</footer> -->
+<!-- {% block content %} -->
+<!-- <h2>Search Results</h2> -->
+
+    <!-- {% endblock %} -->
 
     </html>
