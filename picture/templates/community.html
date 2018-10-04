@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="/static/css/main.css" media="all" />
     <!--<![endif]-->
     <!--[if lt IE 9]>
-	<link rel="stylesheet" href="/themes/mit/assets/css/ie-7-8.css?peuqxh" media="all" />
-	<![endif]-->
+    <link rel="stylesheet" href="/themes/mit/assets/css/ie-7-8.css?peuqxh" media="all" />
+    <![endif]-->
     <style>.theme--custom{--primary-spot:58,109,255;--primary-text:0,0,0;--primary-bg:255,255,255;--primary-bg--alt:255,255,255;--secondary-spot:95,152,255;--secondary-text:255,255,255;--secondary-bg:0,0,0;--search-spot:95,152,255;--search-text:255,255,255;--search-bg:0,0,0;}</style>
 </head>
 
@@ -75,40 +75,22 @@
     </nav>
     
     <main class="primary-container">
-    	<div id="backgroundimage">
-        <!-- Autosuggest UI handled by Vue.js components -->
-        <div class="es-search-mod" id="search-app" @keydown.up.exact.prevent="onUp" @keydown.down.exact.prevent="onDown" @keydown.tab.exact="onTab" @keydown.shift.tab.exact="onShiftTab" :class="{'search-has-quick-links': searchMode}">
-            <div class="es-search__overflow">
-                <div class="es-search__width js-search-terms">
-                    <!-- <form id="searchform" method="get" action="find/{{ name }}" accept-charset="utf-8"> -->
-                    <form method="GET" action="find/{{ name }}" id="es-search-form" class="es-search-form js-es-search-form">
-                        <label for="es-search-form-input" class="es-search__label js-search-trigger white-box">Find your name in the dome!</label>
-                        <div class="es-search__box-mod">
-                            <svg width="30" viewBox="0 0 23 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="currentColor" stroke-width="1.5" class="icon--search-mag search-box__mag">
-                                <g stroke="currentColor" stroke-width="1.5" fill="none">
-                                    <circle cx="9.20757329" cy="8.99160695" r="8.50646589"></circle>
-                                    <path d="M14.8522097,14.6362434 L20.7140392,20.4980728" id="Line-4"></path>
-                                </g>
-                            </svg>
-                            <div class="es-search__box-trigger js-search-trigger">
-                            </div>
-                            <input type="query" v-model="query" v-on:click="onFocus" v-on:keydown="onKeydown" v-on:keyup="onInput" ref="searchInput" class="es-search__box js-search-input" placeholder="Enter your first and last names." id="es-search-form-input" autocomplete="off" name="q">
-                            <button v-on:click="resetQuery" v-if="searchMode" ref="resetButton" class="es-search__reset js-search-reset" type="reset" for="es-search-form" aria-label="reset">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" class="form-reset">
-                                    <circle fill="red" cx="13" cy="13" r="13" />
-                                    <path class="st1" d="M9.9 9.9l6.5 6.5M16.4 9.9l-6.5 6.5" />
-                                </svg>
-                            </button>
-                            <div class="es-search__results-mod" v-if="query.length">
-                                <result-list ref="results" :query="query"></result-list>
-                            </div>
-                        </div>
-                    </form>
-                    <suggested-links v-if="!query.length"></suggested-links>
-                </div>
+        <div class="tab">
+            <div class="paragraph first">
+                <p> Many generations, one community </p>
             </div>
-        </div>
-            <wallpaper-image v-if="searchMode"></wallpaper-image>
+
+            <div class="paragraph">
+                <p> MIT’s Great Dome has come to symbolize our community of faculty, students, staff, and alumni. Now these individuals have lent their names to embody the Great Dome. </p>
+            </div>
+
+            <div class="paragraph">
+                <p> The image in this exhibit incorporates the names of every member of the MIT community from our founding in 1861 until the first semester of 2018—more than 270,000 individuals in all! The carefully arranged names have been etched into the surface of the wafer, with each letter functioning like a light or dark pixel. The result: generation after generation coming together to represent the shared history, character, and sense of purpose that unites us. </p>
+            </div>
+
+            <div class="paragraph">
+                <p> We call the project “One.MIT.” It’s an apt name for an exhibit in MIT.nano, which serves every department and any researcher who needs its tools. Use this website to search for a name and its location on the wafer. </p>
+            </div>
         </div>
     </main>
     </div>

@@ -10890,3 +10890,23 @@ body {
     margin-bottom: 10px;
     z-index: -1;
 }*/
+
+.primary-container .tab {
+    margin-top: 96px;
+}
+
+.tab .first {
+    font-weight: bold;
+}
+
+.tab .paragraph {
+    text-align: center;
+    margin: 12 24;
+}
+
+.tab .name {
+    margin: 12 12;
+}
+
+
+

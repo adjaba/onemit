@@ -18,6 +18,15 @@ def index(request):
     # return HttpResponse("Hello, world. You're at the pictures index. You should be seeing a picture")
     return render(request, 'base.html')
 
+def process(request):
+    return render(request, 'process.html')
+
+def team(request):
+    return render(request, 'team.html')
+
+def community(request):
+    return render(request, 'community.html')
+
 import pandas as pd
 import numpy as np
 
