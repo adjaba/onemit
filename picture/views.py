@@ -1,5 +1,5 @@
 from .dataread import search
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -52,9 +52,12 @@ def searchHighlightedBoxName(names):
     ans = dicty[0].intersection(*dicty.values())
     return (list(ans))
 
-def results(request):
-    context['image_name']
-    return render (request, 'result_list.html')
+# def results(request):
+#     context['image_name']
+#     return render (request, 'result_list.html')
+
+def error(request):
+    return render(request, '404.html')
 
 class ResultListView(ListView):
     """
@@ -62,7 +65,7 @@ class ResultListView(ListView):
     """
     paginate_by = 10
     model= Entry
-    template_name='result_list.html'
+    template_name= 'result_list.html'
 
     def get_queryset(self):
         # result = super(ResultListView, self).get_queryset()
@@ -74,6 +77,8 @@ class ResultListView(ListView):
         # box_line_list=[]
         if query:
             query_list = query.split()
+            if not searchHighlightedBoxName(query_list):
+                return None
             return searchHighlightedBoxName(query_list)[0]
 
     def get_context_data(self, **kwargs):
@@ -81,15 +86,26 @@ class ResultListView(ListView):
         # context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         context = {}
-        context['queryset'] = self.get_queryset()
-        mapping = {}
-        i = 0
-        for y in range(15):
-            for x in range(9):
-                mapping[i] = str(i) + '.png'
-                i += 1
-        context['first']= context['queryset']
-        context['image_name']= mapping[int(context['queryset'][0])]
-        context['text_name']= df3.loc[df['id'] == int(context['queryset'][0])+1, 'screenshot'].tolist()[0]
-        return context
+        # print(self.get_queryset())
+        if (self.get_queryset() is not None):
+            context['queryset'] = self.get_queryset()
+            mapping = {}
+            i = 0
+            for y in range(15):
+                for x in range(9):
+                    mapping[i] = str(i) + '.png'
+                    i += 1
+            context['first']= context['queryset']
+            context['image_name']= mapping[int(context['queryset'][0])]
+            context['text_name']= df3.loc[df['id'] == int(context['queryset'][0])+1, 'screenshot'].tolist()[0]
+            return context
+        return None
+
+    def dispatch(self, request, *args, **kwargs):
+        # check if there is some video onsite
+        if not self.get_queryset():
+            return redirect('error')
+        else:
+            return super(ResultListView, self).dispatch(request, *args, **kwargs)
+
 

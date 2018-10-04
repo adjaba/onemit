@@ -7,7 +7,8 @@ urlpatterns = [
     path('find/', views.ResultListView.as_view(), name='result_list_view'),
     path('process', views.process, name='process'),
     path('team', views.team, name='team'),
-    path('community', views.community, name='community')
+    path('community', views.community, name='community'),
+    path('error', views.error, name='error')
     # path('find/', views.results, name='result_list_view'),
     # path('', views.get_name, name='index/get-name/'),
 ]
